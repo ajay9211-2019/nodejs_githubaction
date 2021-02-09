@@ -36,7 +36,7 @@ app.use(timeout('300s'))
 
 app.get('/', (req, res) => {
 	//res.status(200);
-	res.send('200 ok for testing');
+	res.send('200 ok for testing Hi new cI deployment');
 });
 
 app.use(cors());
