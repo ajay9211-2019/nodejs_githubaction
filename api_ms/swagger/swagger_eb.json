@@ -1,0 +1,1988 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "versions": "1.0.0",
+    "title": "Alyte API Documentation"
+  },
+  "host": "localhost:4002",
+  "basepath": "/",
+  "tags": [
+    {
+      "name": "UserModule",
+      "description": "Everything about Users"
+    }
+  ],
+  "schemes": ["http", "https"],
+  "paths": {
+    "/rback/module/insert": {
+      "post": {
+        "description": "RBAC Insert Module",
+        "operationId": "insertmodule",
+        "consumes": ["application/json"],
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "Request Body",
+            "in": "body",
+            "description": "JSON Object in Request",
+            "required": true,
+            "type": "object",
+            "value": {
+              "operation": "insert",
+              "module_name": "Reports - Vendor Trip Distribution",
+              "status": 1,
+              "check_string": "vendor_trip_dist"
+            }
+          },
+          {
+            "in": "header",
+            "name": "uid",
+            "description": "uid i.e asdfafg@sdf.com",
+            "required": true,
+            "type": "string",
+            "value": "asdfafg@sdf.com"
+          },
+          {
+            "in": "header",
+            "name": "client",
+            "description": "client i.e SYE-vyxMzKpqsCJ2a3l2OA",
+            "required": true,
+            "type": "string",
+            "value": "SYE-vyxMzKpqsCJ2a3l2OA"
+          },
+          {
+            "in": "header",
+            "name": "access_token",
+            "description": "access_token i.e fGq7nRaAiPuA_faLC6pW_g",
+            "required": true,
+            "type": "string",
+            "value": "fGq7nRaAiPuA_faLC6pW_g"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "success.",
+            "content": {
+              "application/json": {
+                "value": {
+                  "success": true,
+                  "data": "Module Reports - Vendor Trip Distribution added.",
+                  "errors": {},
+                  "message": "Module API listed successfully"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/rback/module/update": {
+      "post": {
+        "description": "RBAC Update Module",
+        "operationId": "updatemodule",
+        "consumes": ["application/json"],
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "Request Body",
+            "in": "body",
+            "description": "JSON Object in Request",
+            "required": true,
+            "type": "object",
+            "value": {
+              "operation": "update",
+              "id": 5,
+              "update_fields": {
+                "name": "Roster",
+                "check_string": "roster"
+              }
+            }
+          },
+          {
+            "in": "header",
+            "name": "uid",
+            "description": "uid i.e asdfafg@sdf.com",
+            "required": true,
+            "type": "string",
+            "value": "asdfafg@sdf.com"
+          },
+          {
+            "in": "header",
+            "name": "client",
+            "description": "client i.e SYE-vyxMzKpqsCJ2a3l2OA",
+            "required": true,
+            "type": "string",
+            "value": "SYE-vyxMzKpqsCJ2a3l2OA"
+          },
+          {
+            "in": "header",
+            "name": "access_token",
+            "description": "access_token i.e fGq7nRaAiPuA_faLC6pW_g",
+            "required": true,
+            "type": "string",
+            "value": "fGq7nRaAiPuA_faLC6pW_g"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "success.",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "success": true,
+                  "data": "Module 'Roster' updated.",
+                  "errors": {},
+                  "message": "Module API listed successfully"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/rback/module/read": {
+      "post": {
+        "description": "RBAC Read Module",
+        "operationId": "readparticularmodule",
+        "consumes": ["application/json"],
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "Request Object",
+            "in": "body",
+            "description": "JSON Object in Request",
+            "required": true,
+            "type": "object",
+            "value": {
+              "operation": "read",
+              "name": "Roster"
+            }
+          },
+          {
+            "in": "header",
+            "name": "uid",
+            "description": "uid i.e asdfafg@sdf.com",
+            "required": true,
+            "type": "string",
+            "value": "asdfafg@sdf.com"
+          },
+          {
+            "in": "header",
+            "name": "client",
+            "description": "client i.e SYE-vyxMzKpqsCJ2a3l2OA",
+            "required": true,
+            "type": "string",
+            "value": "SYE-vyxMzKpqsCJ2a3l2OA"
+          },
+          {
+            "in": "header",
+            "name": "access_token",
+            "description": "access_token i.e fGq7nRaAiPuA_faLC6pW_g",
+            "required": true,
+            "type": "string",
+            "value": "fGq7nRaAiPuA_faLC6pW_g"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "success.",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "success": true,
+                  "data": [
+                    {
+                      "name": "Roster",
+                      "id": 5,
+                      "check_string": "roster"
+                    }
+                  ],
+                  "errors": {},
+                  "message": "Module API listed successfully"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/rback/module/readall": {
+      "post": {
+        "description": "RBAC Read All Modules",
+        "operationId": "readallmodules",
+        "consumes": ["application/json"],
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "Request Body",
+            "in": "body",
+            "description": "JSON Object in Request",
+            "required": true,
+            "type": "object",
+            "value": {
+              "operation": "readall"
+            }
+          },
+          {
+            "in": "header",
+            "name": "uid",
+            "description": "uid i.e asdfafg@sdf.com",
+            "required": true,
+            "type": "string",
+            "value": "asdfafg@sdf.com"
+          },
+          {
+            "in": "header",
+            "name": "client",
+            "description": "client i.e SYE-vyxMzKpqsCJ2a3l2OA",
+            "required": true,
+            "type": "string",
+            "value": "SYE-vyxMzKpqsCJ2a3l2OA"
+          },
+          {
+            "in": "header",
+            "name": "access_token",
+            "description": "access_token i.e fGq7nRaAiPuA_faLC6pW_g",
+            "required": true,
+            "type": "string",
+            "value": "fGq7nRaAiPuA_faLC6pW_g"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "success.",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "success": true,
+                  "data": [
+                    {
+                      "name": "Roster",
+                      "id": 5,
+                      "check_string": "roster"
+                    },
+                    {
+                      "name": "Dashboard",
+                      "id": 6,
+                      "check_string": "inital_dashboard"
+                    },
+                    {
+                      "name": "Trip Board",
+                      "id": 7,
+                      "check_string": "tripboard"
+                    },
+                    {
+                      "name": "Submit - Time Constraint",
+                      "id": 8,
+                      "check_string": "finalize"
+                    },
+                    {
+                      "name": "Routing",
+                      "id": 9,
+                      "check_string": "routing"
+                    },
+                    {
+                      "name": "Status",
+                      "id": 10,
+                      "check_string": "status_tab"
+                    },
+                    {
+                      "name": "Reports",
+                      "id": 11,
+                      "check_string": "reports_tab"
+                    },
+                    {
+                      "name": "Billable Entities",
+                      "id": 12,
+                      "check_string": "billable_entities"
+                    },
+                    {
+                      "name": "Customer Invoices",
+                      "id": 13,
+                      "check_string": "customer_invoices"
+                    },
+                    {
+                      "name": "BA Invoices",
+                      "id": 14,
+                      "check_string": "ba_invoices"
+                    },
+                    {
+                      "name": "PTS Operators",
+                      "id": 15,
+                      "check_string": "pts_perators"
+                    },
+                    {
+                      "name": "Site Managers",
+                      "id": 16,
+                      "check_string": "site_managers"
+                    },
+                    {
+                      "name": "Customers",
+                      "id": 17,
+                      "check_string": "customers"
+                    },
+                    {
+                      "name": "Operator Shift Manager",
+                      "id": 18,
+                      "check_string": "operator_shift_manager"
+                    },
+                    {
+                      "name": "Employers",
+                      "id": 19,
+                      "check_string": "employers"
+                    },
+                    {
+                      "name": "Drivers",
+                      "id": 20,
+                      "check_string": "drivers"
+                    },
+                    {
+                      "name": "Business Associates",
+                      "id": 21,
+                      "check_string": "business_associates"
+                    },
+                    {
+                      "name": "Employees",
+                      "id": 22,
+                      "check_string": "employees"
+                    },
+                    {
+                      "name": "Transport Desk Managers",
+                      "id": 23,
+                      "check_string": "transport_desk_managers"
+                    },
+                    {
+                      "name": "Line Managers",
+                      "id": 24,
+                      "check_string": "line_managers"
+                    },
+                    {
+                      "name": "Guards",
+                      "id": 25,
+                      "check_string": "guards"
+                    },
+                    {
+                      "name": "Employee Shift Manager",
+                      "id": 26,
+                      "check_string": "employee_shift_manager"
+                    },
+                    {
+                      "name": "General Settings",
+                      "id": 27,
+                      "check_string": "general_settings"
+                    },
+                    {
+                      "name": "System Settings",
+                      "id": 28,
+                      "check_string": "system_settings"
+                    },
+                    {
+                      "name": "Configurator - Compliances",
+                      "id": 29,
+                      "check_string": "config_compliances"
+                    },
+                    {
+                      "name": "Configurator - Guard Constraint",
+                      "id": 30,
+                      "check_string": "config_guard"
+                    },
+                    {
+                      "name": "Configurator - Time Constraint",
+                      "id": 31,
+                      "check_string": "config_time"
+                    },
+                    {
+                      "name": "Configurator - Distance Constraint",
+                      "id": 32,
+                      "check_string": "config_distance"
+                    },
+                    {
+                      "name": "Configurator - CutOff Constraint",
+                      "id": 33,
+                      "check_string": "config_cutoff"
+                    },
+                    {
+                      "name": "Configurator - Zones",
+                      "id": 34,
+                      "check_string": "config_zone"
+                    },
+                    {
+                      "name": "Configurator - Contracts",
+                      "id": 35,
+                      "check_string": "config_contracts"
+                    },
+                    {
+                      "name": "Reports - Trip Logs",
+                      "id": 36,
+                      "check_string": "trip_logs"
+                    },
+                    {
+                      "name": "Reports - Employee Logs",
+                      "id": 37,
+                      "check_string": "employee_logs"
+                    },
+                    {
+                      "name": "Reports - Vehicle Deployment",
+                      "id": 38,
+                      "check_string": "vehicle_deployment"
+                    },
+                    {
+                      "name": "Reports - OTA",
+                      "id": 39,
+                      "check_string": "ota_report"
+                    },
+                    {
+                      "name": "Reports - OTD",
+                      "id": 40,
+                      "check_string": "otd_report"
+                    },
+                    {
+                      "name": "Reports - Employee No Show",
+                      "id": 41,
+                      "check_string": "emp_no_show_report"
+                    },
+                    {
+                      "name": "Reports - Employee satisfaction",
+                      "id": 42,
+                      "check_string": "emp_satisfaction_report"
+                    },
+                    {
+                      "name": "Reports - Operation Summary",
+                      "id": 43,
+                      "check_string": "ops_summary_report"
+                    },
+                    {
+                      "name": "Reports - OTA Summary",
+                      "id": 44,
+                      "check_string": "ota_summary_report"
+                    },
+                    {
+                      "name": "Reports - OTD Summary",
+                      "id": 45,
+                      "check_string": "otd_summary_report"
+                    },
+                    {
+                      "name": "Reports - No Show and cancellation Summary",
+                      "id": 46,
+                      "check_string": "no_show_can_summary_report"
+                    },
+                    {
+                      "name": "Reports - Panic Alarms",
+                      "id": 47,
+                      "check_string": "panic_alarms_report"
+                    },
+                    {
+                      "name": "Reports - Employee Activity",
+                      "id": 48,
+                      "check_string": "emp_act_report"
+                    },
+                    {
+                      "name": "Reports - Driver Activity",
+                      "id": 49,
+                      "check_string": "driver_act_report"
+                    },
+                    {
+                      "name": "Reports - Drivers Trip Summary",
+                      "id": 50,
+                      "check_string": "driver_trip_sum"
+                    },
+                    {
+                      "name": "Reports - Employee Wise No Show",
+                      "id": 51,
+                      "check_string": "emp_wise_no_show"
+                    },
+                    {
+                      "name": "Reports - Shift Fleet Utilisation Summary",
+                      "id": 52,
+                      "check_string": "shift_fleet_uti_sum"
+                    },
+                    {
+                      "name": "Reports - Shift Wise No Show",
+                      "id": 53,
+                      "check_string": "shift_wise_no_show"
+                    },
+                    {
+                      "name": "Reports - Trip Wise Driver Exception",
+                      "id": 54,
+                      "check_string": "trip_wise_dri_exp"
+                    },
+                    {
+                      "name": "Reports - Vendor Trip Distribution",
+                      "id": 55,
+                      "check_string": "vendor_trip_dist"
+                    },
+                    {
+                      "name": "New Module 1",
+                      "id": 56,
+                      "check_string": "new_module_1"
+                    },
+                    {
+                      "name": "New Module 2",
+                      "id": 57,
+                      "check_string": "new_module_2"
+                    },
+                    {
+                      "name": "Reports - Vendor Trip Distribution 1",
+                      "id": 58,
+                      "check_string": "vendor_trip_dist_1"
+                    },
+                    {
+                      "name": "Reports - Vendor Trip Distribution 2",
+                      "id": 59,
+                      "check_string": "vendor_trp_dist_send_email"
+                    },
+                    {
+                      "name": "ABCD",
+                      "id": 60,
+                      "check_string": "xyz"
+                    },
+                    {
+                      "name": "Reports - Vendor Trip Distribution 5",
+                      "id": 61,
+                      "check_string": "vendor_trip_dist_5"
+                    }
+                  ],
+                  "errors": {},
+                  "message": "Module API listed successfully"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/rback/module/delete": {
+      "post": {
+        "description": "RBAC delete Module",
+        "operationId": "deletemodule",
+        "consumes": ["application/json"],
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "Request Body",
+            "in": "body",
+            "description": "JSON Object in Request",
+            "required": true,
+            "type": "object",
+            "value": {
+              "operation": "delete",
+              "id": 5,
+              "status": 1
+            }
+          },
+          {
+            "in": "header",
+            "name": "uid",
+            "description": "uid i.e asdfafg@sdf.com",
+            "required": true,
+            "type": "string",
+            "value": "asdfafg@sdf.com"
+          },
+          {
+            "in": "header",
+            "name": "client",
+            "description": "client i.e SYE-vyxMzKpqsCJ2a3l2OA",
+            "required": true,
+            "type": "string",
+            "value": "SYE-vyxMzKpqsCJ2a3l2OA"
+          },
+          {
+            "in": "header",
+            "name": "access_token",
+            "description": "access_token i.e fGq7nRaAiPuA_faLC6pW_g",
+            "required": true,
+            "type": "string",
+            "value": "fGq7nRaAiPuA_faLC6pW_g"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "success.",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "success": true,
+                  "data": "Status updated for Module 'Roster'.",
+                  "errors": {},
+                  "message": "Module API listed successfully"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/rback/feature/insert": {
+      "post": {
+        "description": "RBAC Insert Feature",
+        "operationId": "insertfeature",
+        "consumes": ["application/json"],
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "Request Body",
+            "in": "body",
+            "description": "JSON Object in Request",
+            "required": true,
+            "type": "object",
+            "value": {
+              "operation": "insert",
+              "module_name": "Reports - Vendor Trip Distribution",
+              "feature_name": "Vendor Trip Distribution - Send Email",
+              "status": 1,
+              "check_string": "vendor_trp_dist_send_email"
+            }
+          },
+          {
+            "in": "header",
+            "name": "uid",
+            "description": "uid i.e asdfafg@sdf.com",
+            "required": true,
+            "type": "string",
+            "value": "asdfafg@sdf.com"
+          },
+          {
+            "in": "header",
+            "name": "client",
+            "description": "client i.e SYE-vyxMzKpqsCJ2a3l2OA",
+            "required": true,
+            "type": "string",
+            "value": "SYE-vyxMzKpqsCJ2a3l2OA"
+          },
+          {
+            "in": "header",
+            "name": "access_token",
+            "description": "access_token i.e fGq7nRaAiPuA_faLC6pW_g",
+            "required": true,
+            "type": "string",
+            "value": "fGq7nRaAiPuA_faLC6pW_g"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "success.",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "success": true,
+                  "data": "Feature Vendor Trip Distribution - Send Email in module Reports - Vendor Trip Distribution added.",
+                  "errors": {},
+                  "message": "Feature API listed successfully"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/rback/feature/update": {
+      "post": {
+        "description": "RBAC Update Feature",
+        "operationId": "updatefeature",
+        "consumes": ["application/json"],
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "Request Body",
+            "in": "body",
+            "description": "JSON Object in Request",
+            "required": true,
+            "type": "object",
+            "value": {
+              "operation": "update",
+              "id": 8,
+              "update_fields": {
+                "name": "Submit - Time Constraint"
+              }
+            }
+          },
+          {
+            "in": "header",
+            "name": "uid",
+            "description": "uid i.e asdfafg@sdf.com",
+            "required": true,
+            "type": "string",
+            "value": "asdfafg@sdf.com"
+          },
+          {
+            "in": "header",
+            "name": "client",
+            "description": "client i.e SYE-vyxMzKpqsCJ2a3l2OA",
+            "required": true,
+            "type": "string",
+            "value": "SYE-vyxMzKpqsCJ2a3l2OA"
+          },
+          {
+            "in": "header",
+            "name": "access_token",
+            "description": "access_token i.e fGq7nRaAiPuA_faLC6pW_g",
+            "required": true,
+            "type": "string",
+            "value": "fGq7nRaAiPuA_faLC6pW_g"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "success.",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "success": true,
+                  "data": "Feature 'Submit - Time Constraint' updated.",
+                  "errors": {},
+                  "message": "Feature API listed successfully"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/rback/feature/read": {
+      "post": {
+        "description": "RBAC Read Feature",
+        "operationId": "readparticularmodulefeature",
+        "consumes": ["application/json"],
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "Request Object",
+            "in": "body",
+            "description": "JSON Object in Request",
+            "required": true,
+            "type": "object",
+            "value": {
+              "operation": "read",
+              "module_name": "Routing"
+            }
+          },
+          {
+            "in": "header",
+            "name": "uid",
+            "description": "uid i.e asdfafg@sdf.com",
+            "required": true,
+            "type": "string",
+            "value": "asdfafg@sdf.com"
+          },
+          {
+            "in": "header",
+            "name": "client",
+            "description": "client i.e SYE-vyxMzKpqsCJ2a3l2OA",
+            "required": true,
+            "type": "string",
+            "value": "SYE-vyxMzKpqsCJ2a3l2OA"
+          },
+          {
+            "in": "header",
+            "name": "access_token",
+            "description": "access_token i.e fGq7nRaAiPuA_faLC6pW_g",
+            "required": true,
+            "type": "string",
+            "value": "fGq7nRaAiPuA_faLC6pW_g"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "success.",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "success": true,
+                  "data": [
+                    {
+                      "feature_name": "Submit - Time Constraint",
+                      "feature_id": 8,
+                      "feature_check_string": "auto_allocate",
+                      "main_modules_id": 9,
+                      "module_name": "Routing"
+                    },
+                    {
+                      "feature_name": "Finalize Routes",
+                      "feature_id": 9,
+                      "feature_check_string": "finalize",
+                      "main_modules_id": 9,
+                      "module_name": "Routing"
+                    },
+                    {
+                      "feature_name": "Show Map",
+                      "feature_id": 10,
+                      "feature_check_string": "show_map",
+                      "main_modules_id": 9,
+                      "module_name": "Routing"
+                    },
+                    {
+                      "feature_name": "Allocate Vehicle",
+                      "feature_id": 11,
+                      "feature_check_string": "allocate_vehicle",
+                      "main_modules_id": 9,
+                      "module_name": "Routing"
+                    },
+                    {
+                      "feature_name": "Add Guard",
+                      "feature_id": 12,
+                      "feature_check_string": "add_guard",
+                      "main_modules_id": 9,
+                      "module_name": "Routing"
+                    }
+                  ],
+                  "errors": {},
+                  "message": "Feature API listed successfully"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/rback/feature/delete": {
+      "post": {
+        "description": "RBAC delete Feature",
+        "operationId": "deletefeature",
+        "consumes": ["application/json"],
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "Request Body",
+            "in": "body",
+            "description": "JSON Object in Request",
+            "required": true,
+            "type": "object",
+            "value": {
+              "operation": "delete",
+              "name": "Add Vehicle",
+              "status": 0
+            }
+          },
+          {
+            "in": "header",
+            "name": "uid",
+            "description": "uid i.e asdfafg@sdf.com",
+            "required": true,
+            "type": "string",
+            "value": "asdfafg@sdf.com"
+          },
+          {
+            "in": "header",
+            "name": "client",
+            "description": "client i.e SYE-vyxMzKpqsCJ2a3l2OA",
+            "required": true,
+            "type": "string",
+            "value": "SYE-vyxMzKpqsCJ2a3l2OA"
+          },
+          {
+            "in": "header",
+            "name": "access_token",
+            "description": "access_token i.e fGq7nRaAiPuA_faLC6pW_g",
+            "required": true,
+            "type": "string",
+            "value": "fGq7nRaAiPuA_faLC6pW_g"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "success.",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "success": true,
+                  "data": "Status updated for Feature 'Add Vehicle'.",
+                  "errors": {},
+                  "message": "Feature API listed successfully"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/sites/add": {
+      "post": {
+        "description": "Add Site",
+        "operationId": "addSite",
+        "consumes": ["application/json"],
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "Request Body",
+            "in": "body",
+            "description": "JSON Object in Request",
+            "required": true,
+            "type": "object",
+            "value": {
+              "name": "Test sitee",
+              "latitude": 19.1854,
+              "longitude": "72.8585",
+              "employeeCompanyId": 93,
+              "address": "",
+              "phone": "",
+              "branchName": "ABC",
+              "siteCode": "1234",
+              "contactName": "def",
+              "address2": "mumbai",
+              "address3": "mah",
+              "phone2": "",
+              "businessArea": "mum",
+              "address1": "Malad, East",
+              "phone1": "919776478892",
+              "pin": 400078,
+              "state": "MAHARASHTRA",
+              "city": "Mumbai",
+              "partyBusinessArea": "Mumbai",
+              "panNo": "BFEXB4433T",
+              "gstinNo": "36ARVPS3698F1ZF",
+              "costCentre": "costCentre",
+              "profitCentre": "profitCentre",
+              "glAccNo": "glAccNo",
+              "partyCode": "partyCode",
+              "partyContactName": "ABC",
+              "partyAddress1": "Malad",
+              "partyAddress2": "mum",
+              "partyAddress3": "mah",
+              "partyPhone2": "",
+              "contactEmail": "",
+              "active": "Yes",
+              "proximityRadius": "",
+              "sapControlNumber": "",
+              "contact_phone": "",
+              "partyPin": 400089,
+              "partyCity": "Mumbai",
+              "partyState": "MAHARASHTRA",
+              "partyPhone1": "919898779989",
+              "partyPanNo": "BCDFG8898E",
+              "partyGstinNo": "27AAPFU0939F1ZV",
+              "sez": "sez",
+              "lutDate": "2020-05-11",
+              "lutNo": "1213",
+              "partyName": "Wework",
+              "adminEmailId": "abc@gmail.com",
+              "adminName": "Shanti"
+            }
+          },
+          {
+            "in": "header",
+            "name": "uid",
+            "description": "uid i.e asdfafg@sdf.com",
+            "required": true,
+            "type": "string",
+            "value": "asdfafg@sdf.com"
+          },
+          {
+            "in": "header",
+            "name": "client",
+            "description": "client i.e SYE-vyxMzKpqsCJ2a3l2OA",
+            "required": true,
+            "type": "string",
+            "value": "SYE-vyxMzKpqsCJ2a3l2OA"
+          },
+          {
+            "in": "header",
+            "name": "access_token",
+            "description": "access_token i.e fGq7nRaAiPuA_faLC6pW_g",
+            "required": true,
+            "type": "string",
+            "value": "fGq7nRaAiPuA_faLC6pW_g"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "success.",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "success": true,
+                  "data": {},
+                  "errors": {},
+                  "message": "Site added successfully"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/sites/update": {
+      "patch": {
+        "description": "Update Site",
+        "operationId": "editSite",
+        "consumes": ["application/json"],
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "Request Body",
+            "in": "body",
+            "description": "JSON Object in Request",
+            "required": true,
+            "type": "object",
+            "value": {
+              "siteId": 188,
+              "name": "Test sitee",
+              "latitude": 19.1854,
+              "longitude": "72.8585",
+              "employeeCompanyId": 93,
+              "address": "",
+              "phone": "",
+              "branchName": "ABC",
+              "siteCode": "1234",
+              "contactName": "def",
+              "address2": "mumbai",
+              "address3": "mah",
+              "phone2": "",
+              "businessArea": "mum",
+              "address1": "Malad, East",
+              "phone1": "919776478892",
+              "pin": 400078,
+              "state": "MAHARASHTRA",
+              "city": "Mumbai",
+              "partyBusinessArea": "Mumbai",
+              "panNo": "BFEXB4433T",
+              "gstinNo": "36ARVPS3698F1ZF",
+              "costCentre": "costCentre",
+              "profitCentre": "profitCentre",
+              "glAccNo": "glAccNo",
+              "partyCode": "partyCode",
+              "partyContactName": "ABC",
+              "partyAddress1": "Malad",
+              "partyAddress2": "mum",
+              "partyAddress3": "mah",
+              "partyPhone2": "",
+              "contactEmail": "",
+              "active": "Yes",
+              "proximityRadius": "",
+              "sapControlNumber": "",
+              "contact_phone": "",
+              "partyPin": 400089,
+              "partyCity": "Mumbai",
+              "partyState": "MAHARASHTRA",
+              "partyPhone1": "919898779989",
+              "partyPanNo": "BCDFG8898E",
+              "partyGstinNo": "27AAPFU0939F1ZV",
+              "sez": "sez",
+              "lutDate": "2020-05-11",
+              "lutNo": "1213",
+              "partyName": "Wework",
+              "adminEmailId": "abc@gmail.com",
+              "adminName": "Shanti"
+            }
+          },
+          {
+            "in": "header",
+            "name": "uid",
+            "description": "uid i.e asdfafg@sdf.com",
+            "required": true,
+            "type": "string",
+            "value": "asdfafg@sdf.com"
+          },
+          {
+            "in": "header",
+            "name": "client",
+            "description": "client i.e SYE-vyxMzKpqsCJ2a3l2OA",
+            "required": true,
+            "type": "string",
+            "value": "SYE-vyxMzKpqsCJ2a3l2OA"
+          },
+          {
+            "in": "header",
+            "name": "access_token",
+            "description": "access_token i.e fGq7nRaAiPuA_faLC6pW_g",
+            "required": true,
+            "type": "string",
+            "value": "fGq7nRaAiPuA_faLC6pW_g"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "success.",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "success": true,
+                  "data": {},
+                  "errors": {},
+                  "message": "Site updated successfully"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/user/add": {
+      "post": {
+        "description": "Add user",
+        "tags": ["UserModule"],
+        "operationId": "userModule1",
+        "consumes": ["multipart/form-data"],
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "in": "header",
+            "name": "uid",
+            "description": "uid i.e asdfafg@sdf.com",
+            "required": true,
+            "type": "string",
+            "value": "deekshith.kgr95@gmail.com"
+          },
+          {
+            "in": "header",
+            "name": "client",
+            "description": "client i.e SYE-vyxMzKpqsCJ2a3l2OA",
+            "required": true,
+            "type": "string",
+            "value": "osUe4ObG0a1QvZ4R9-t6yg"
+          },
+          {
+            "in": "header",
+            "name": "access_token",
+            "description": "access_token i.e fGq7nRaAiPuA_faLC6pW_g",
+            "required": true,
+            "type": "string",
+            "value": "a6tCfF5T7HVIdx8Czd6I7w"
+          },
+          {
+            "name": "email",
+            "type": "string",
+            "in": "formData",
+            "required": true
+          },
+          {
+            "name": "f_name",
+            "type": "string",
+            "in": "formData",
+            "required": true
+          },
+          {
+            "name": "m_name",
+            "type": "string",
+            "in": "formData"
+          },
+          {
+            "name": "l_name",
+            "type": "string",
+            "in": "formData",
+            "required": true
+          },
+          {
+            "name": "role",
+            "type": "integer",
+            "in": "formData",
+            "required": true
+          },
+          {
+            "name": "phone",
+            "type": "integer",
+            "in": "formData",
+            "required": true
+          },
+          {
+            "name": "process_code",
+            "type": "string",
+            "in": "formData"
+          },
+          {
+            "name": "site_id",
+            "type": "integer",
+            "in": "formData",
+            "required": true
+          },
+          {
+            "name": "company_id",
+            "type": "integer",
+            "in": "formData",
+            "required": true
+          },
+          {
+            "name": "legal_name",
+            "type": "string",
+            "in": "formData",
+            "required": true
+          },
+          {
+            "name": "pan",
+            "type": "string",
+            "in": "formData",
+            "required": true
+          },
+          {
+            "name": "tan",
+            "type": "string",
+            "in": "formData",
+            "required": true
+          },
+          {
+            "name": "business_type",
+            "type": "string",
+            "in": "formData",
+            "required": true
+          },
+          {
+            "name": "service_tax_no",
+            "type": "string",
+            "in": "formData",
+            "required": true
+          },
+          {
+            "name": "hq_address",
+            "type": "string",
+            "in": "formData",
+            "required": true
+          },
+          { "name": "avatar_content_type", "type": "string", "in": "formData" },
+          { "name": "avatar_file_size", "type": "integer", "in": "formData" },
+          {
+            "name": "site_role_list[0][0]",
+            "type": "number",
+            "in": "formData",
+            "description": "siteId",
+            "required": true
+          },
+          {
+            "name": "site_role_list[0][1]",
+            "type": "number",
+            "in": "formData",
+            "description": "roleId",
+            "required": true
+          },
+          {
+            "name": "site_role_list[0][2]",
+            "type": "boolean",
+            "in": "formData",
+            "description": "isDefault",
+            "required": true
+          },
+          {
+            "name": "site_role_list[1][0]",
+            "type": "number",
+            "in": "formData",
+            "description": "siteId"
+          },
+          {
+            "name": "site_role_list[1][1]",
+            "type": "number",
+            "in": "formData",
+            "description": "roleId"
+          },
+          {
+            "name": "site_role_list[1][2]",
+            "type": "boolean",
+            "in": "formData",
+            "description": "isDefault"
+          },
+          { "name": "avatar_file", "type": "file", "in": "formData" }
+        ],
+        "responses": {
+          "200": {
+            "description": "success.",
+            "schema": {
+              "example": {
+                "success": true,
+                "data": {},
+                "errors": [],
+                "message": "User Added successfully"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/user/update": {
+      "post": {
+        "description": "Update user",
+        "tags": ["UserModule"],
+        "operationId": "userModule",
+        "consumes": ["multipart/form-data"],
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "in": "header",
+            "name": "uid",
+            "description": "uid i.e asdfafg@sdf.com",
+            "required": true,
+            "type": "string",
+            "value": "deekshith.kgr95@gmail.com"
+          },
+          {
+            "in": "header",
+            "name": "client",
+            "description": "client i.e SYE-vyxMzKpqsCJ2a3l2OA",
+            "required": true,
+            "type": "string",
+            "value": "osUe4ObG0a1QvZ4R9-t6yg"
+          },
+          {
+            "in": "header",
+            "name": "access_token",
+            "description": "access_token i.e fGq7nRaAiPuA_faLC6pW_g",
+            "required": true,
+            "type": "string",
+            "value": "a6tCfF5T7HVIdx8Czd6I7w"
+          },
+          {
+            "name": "id",
+            "type": "integer",
+            "in": "formData",
+            "required": true
+          },
+          {
+            "name": "email",
+            "type": "string",
+            "in": "formData",
+            "required": true
+          },
+          {
+            "name": "f_name",
+            "type": "string",
+            "in": "formData",
+            "required": true
+          },
+          {
+            "name": "m_name",
+            "type": "string",
+            "in": "formData"
+          },
+          {
+            "name": "l_name",
+            "type": "string",
+            "in": "formData",
+            "required": true
+          },
+          {
+            "name": "role",
+            "type": "integer",
+            "in": "formData",
+            "required": true
+          },
+          {
+            "name": "phone",
+            "type": "integer",
+            "in": "formData",
+            "required": true
+          },
+          {
+            "name": "process_code",
+            "type": "string",
+            "in": "formData"
+          },
+          {
+            "name": "site_id",
+            "type": "integer",
+            "in": "formData",
+            "required": true
+          },
+          {
+            "name": "company_id",
+            "type": "integer",
+            "in": "formData",
+            "required": true
+          },
+          {
+            "name": "legal_name",
+            "type": "string",
+            "in": "formData",
+            "required": true
+          },
+          {
+            "name": "pan",
+            "type": "string",
+            "in": "formData",
+            "required": true
+          },
+          {
+            "name": "tan",
+            "type": "string",
+            "in": "formData",
+            "required": true
+          },
+          {
+            "name": "business_type",
+            "type": "string",
+            "in": "formData",
+            "required": true
+          },
+          {
+            "name": "service_tax_no",
+            "type": "string",
+            "in": "formData",
+            "required": true
+          },
+          {
+            "name": "hq_address",
+            "type": "string",
+            "in": "formData",
+            "required": true
+          },
+          { "name": "avatar_content_type", "type": "string", "in": "formData" },
+          { "name": "avatar_file_size", "type": "integer", "in": "formData" },
+          {
+            "name": "site_role_list[0][0]",
+            "type": "number",
+            "in": "formData",
+            "description": "siteId",
+            "required": true
+          },
+          {
+            "name": "site_role_list[0][1]",
+            "type": "number",
+            "in": "formData",
+            "description": "roleId",
+            "required": true
+          },
+          {
+            "name": "site_role_list[0][2]",
+            "type": "boolean",
+            "in": "formData",
+            "description": "isDefault",
+            "required": true
+          },
+          {
+            "name": "site_role_list[1][0]",
+            "type": "number",
+            "in": "formData",
+            "description": "siteId"
+          },
+          {
+            "name": "site_role_list[1][1]",
+            "type": "number",
+            "in": "formData",
+            "description": "roleId"
+          },
+          {
+            "name": "site_role_list[1][2]",
+            "type": "boolean",
+            "in": "formData",
+            "description": "isDefault"
+          },
+          { "name": "avatar_file", "type": "file", "in": "formData" }
+        ],
+        "responses": {
+          "200": {
+            "description": "success.",
+            "schema": {
+              "example": {
+                "success": true,
+                "data": {},
+                "errors": [],
+                "message": "User Updated successfully"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/user/find/{id}": {
+      "get": {
+        "description": "Find user by id",
+        "tags": ["UserModule"],
+        "operationId": "userModule3",
+        "consumes": ["multipart/form-data"],
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "in": "header",
+            "name": "uid",
+            "description": "uid i.e asdfafg@sdf.com",
+            "required": true,
+            "type": "string",
+            "value": "deekshith.kgr95@gmail.com"
+          },
+          {
+            "in": "header",
+            "name": "client",
+            "description": "client i.e SYE-vyxMzKpqsCJ2a3l2OA",
+            "required": true,
+            "type": "string",
+            "value": "osUe4ObG0a1QvZ4R9-t6yg"
+          },
+          {
+            "in": "header",
+            "name": "access_token",
+            "description": "access_token i.e fGq7nRaAiPuA_faLC6pW_g",
+            "required": true,
+            "type": "string",
+            "value": "a6tCfF5T7HVIdx8Czd6I7w"
+          },
+          {
+            "name": "id",
+            "type": "integer",
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "success.",
+            "schema": {
+              "example": {
+                "success": true,
+                "data": {
+                  "user": {
+                    "id": 11277,
+                    "email": "sachinupawar111@gmail.com",
+                    "username": "sachinupawar111-gmail-com",
+                    "f_name": "sachin",
+                    "m_name": "uttam",
+                    "l_name": "pawar",
+                    "role": 1,
+                    "entity_type": "employee",
+                    "entity_id": 0,
+                    "phone": "8898080302",
+                    "current_sign_in_at": null,
+                    "last_sign_in_at": null,
+                    "provider": "email",
+                    "uid": "sachinupawar111@gmail.com",
+                    "avatar_file_name": "https://vaayu-dev.s3.ap-south-1.amazonaws.com/doc_1589388353.png",
+                    "avatar_content_type": "image/jpeg",
+                    "avatar_file_size": 120,
+                    "last_active_time": "2008-12-31T18:30:00.000Z",
+                    "status": 2,
+                    "passcode": "null",
+                    "current_location": null,
+                    "process_code": "ADAD1324",
+                    "site_id": "138",
+                    "company_id": 95,
+                    "legal_name": "aaaa",
+                    "pan": "212qwqewep",
+                    "tan": "212qwqewep",
+                    "business_type": "ba",
+                    "service_tax_no": "er5erg45",
+                    "hq_address": "zdfsdff",
+                    "user_sites": [
+                      {
+                        "site_id": 138,
+                        "site_name": "Sachin Site",
+                        "is_default": "true",
+                        "role_id": 1,
+                        "role_name": "employee"
+                      }
+                    ]
+                  }
+                },
+                "errors": [],
+                "message": "User Found"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/user/roles": {
+      "get": {
+        "description": "Find roles",
+        "tags": ["UserModule"],
+        "operationId": "userModule4",
+        "consumes": ["multipart/form-data"],
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "in": "header",
+            "name": "uid",
+            "description": "uid i.e asdfafg@sdf.com",
+            "required": true,
+            "type": "string",
+            "value": "deekshith.kgr95@gmail.com"
+          },
+          {
+            "in": "header",
+            "name": "client",
+            "description": "client i.e SYE-vyxMzKpqsCJ2a3l2OA",
+            "required": true,
+            "type": "string",
+            "value": "osUe4ObG0a1QvZ4R9-t6yg"
+          },
+          {
+            "in": "header",
+            "name": "access_token",
+            "description": "access_token i.e fGq7nRaAiPuA_faLC6pW_g",
+            "required": true,
+            "type": "string",
+            "value": "a6tCfF5T7HVIdx8Czd6I7w"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "success.",
+            "schema": {
+              "example": {
+                "success": true,
+                "data": {
+                  "roles": [
+                    {
+                      "id": 1,
+                      "role_name": "employee"
+                    },
+                    {
+                      "id": 2,
+                      "role_name": "employer"
+                    }
+                  ]
+                },
+                "errors": [],
+                "message": "Role List Fetch Successfully"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/user/list": {
+      "post": {
+        "description": "Find users list",
+        "tags": ["UserModule"],
+        "operationId": "userModule5",
+        "consumes": ["application/json"],
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "in": "header",
+            "name": "uid",
+            "description": "uid i.e asdfafg@sdf.com",
+            "required": true,
+            "type": "string",
+            "value": "deekshith.kgr95@gmail.com"
+          },
+          {
+            "in": "header",
+            "name": "client",
+            "description": "client i.e SYE-vyxMzKpqsCJ2a3l2OA",
+            "required": true,
+            "type": "string",
+            "value": "osUe4ObG0a1QvZ4R9-t6yg"
+          },
+          {
+            "in": "header",
+            "name": "access_token",
+            "description": "access_token i.e fGq7nRaAiPuA_faLC6pW_g",
+            "required": true,
+            "type": "string",
+            "value": "a6tCfF5T7HVIdx8Czd6I7w"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Pagination",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "required": ["pageNo", "pageSize"],
+              "properties": {
+                "pageNo": {
+                  "description": "page number",
+                  "required": true,
+                  "type": "integer",
+                  "value": "1"
+                },
+                "pageSize": {
+                  "description": "page size count",
+                  "required": true,
+                  "type": "integer",
+                  "value": "5"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "success.",
+            "schema": {
+              "example": {
+                "success": true,
+                "data": {
+                  "userList": [
+                    {
+                      "id": 11275,
+                      "email": "mitesh765sharma@gmail.com",
+                      "username": "mitesh765sharma-gmail-com",
+                      "f_name": "GY14",
+                      "m_name": "",
+                      "l_name": "fourteen",
+                      "role": 0,
+                      "entity_type": "Employee",
+                      "entity_id": 8193,
+                      "phone": "5678956789",
+                      "current_sign_in_at": null,
+                      "last_sign_in_at": null,
+                      "provider": "email",
+                      "uid": "mitesh765sharma@gmail.com",
+                      "avatar_file_name": null,
+                      "avatar_content_type": null,
+                      "avatar_file_size": null,
+                      "last_active_time": "2008-12-31T18:30:00.000Z",
+                      "status": 0,
+                      "passcode": null,
+                      "current_location": null,
+                      "process_code": "",
+                      "site_id": null,
+                      "company_id": null,
+                      "legal_name": null,
+                      "pan": null,
+                      "tan": null,
+                      "business_type": null,
+                      "service_tax_no": null,
+                      "hq_address": null,
+                      "user_sites": []
+                    }
+                  ]
+                },
+                "errors": [],
+                "message": "User List"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/user/reset-password": {
+      "post": {
+        "description": "Reset password request by email",
+        "tags": ["UserModule"],
+        "operationId": "userModule6",
+        "consumes": ["application/json"],
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "in": "header",
+            "name": "uid",
+            "description": "uid i.e asdfafg@sdf.com",
+            "required": true,
+            "type": "string",
+            "value": "deekshith.kgr95@gmail.com"
+          },
+          {
+            "in": "header",
+            "name": "client",
+            "description": "client i.e SYE-vyxMzKpqsCJ2a3l2OA",
+            "required": true,
+            "type": "string",
+            "value": "osUe4ObG0a1QvZ4R9-t6yg"
+          },
+          {
+            "in": "header",
+            "name": "access_token",
+            "description": "access_token i.e fGq7nRaAiPuA_faLC6pW_g",
+            "required": true,
+            "type": "string",
+            "value": "a6tCfF5T7HVIdx8Czd6I7w"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "required": ["email"],
+              "properties": {
+                "email": {
+                  "description": "email",
+                  "required": true,
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "success.",
+            "schema": {
+              "example": {
+                "success": true,
+                "data": {
+                  "token": "l2z4ltBcyda3zRMvse6AcxxZWJvz896RWqGIf5EU5JGxEYm4MqW-EdwcjYRWYhJY"
+                },
+                "errors": [],
+                "message": "Reset password request accepted"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/user/update-password": {
+      "post": {
+        "description": "Update password by token and new password",
+        "tags": ["UserModule"],
+        "operationId": "userModule7",
+        "consumes": ["application/json"],
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "in": "header",
+            "name": "uid",
+            "description": "uid i.e asdfafg@sdf.com",
+            "required": true,
+            "type": "string",
+            "value": "deekshith.kgr95@gmail.com"
+          },
+          {
+            "in": "header",
+            "name": "client",
+            "description": "client i.e SYE-vyxMzKpqsCJ2a3l2OA",
+            "required": true,
+            "type": "string",
+            "value": "osUe4ObG0a1QvZ4R9-t6yg"
+          },
+          {
+            "in": "header",
+            "name": "access_token",
+            "description": "access_token i.e fGq7nRaAiPuA_faLC6pW_g",
+            "required": true,
+            "type": "string",
+            "value": "a6tCfF5T7HVIdx8Czd6I7w"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "required": ["token", "password"],
+              "properties": {
+                "token": {
+                  "description": "token",
+                  "required": true,
+                  "type": "string"
+                },
+                "password": {
+                  "description": "password",
+                  "required": true,
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "success.",
+            "schema": {
+              "example": {
+                "success": true,
+                "data": {},
+                "errors": [],
+                "message": "Password changed successfully"
+              }
+            }
+          },
+          "/employees/employee_id": {
+            "post": {
+              "description": "Check for Duplicate Employee Id",
+              "operationId": "duplicateEmployee",
+              "consumes": ["application/json"],
+              "produces": ["application/json"],
+              "parameters": [
+                {
+                  "name": "Request Body",
+                  "in": "body",
+                  "description": "JSON Object in Request",
+                  "required": true,
+                  "type": "object",
+                  "value": {
+                    "empId": "DMART01"
+                  }
+                },
+                {
+                  "in": "header",
+                  "name": "uid",
+                  "description": "uid i.e asdfafg@sdf.com",
+                  "required": true,
+                  "type": "string",
+                  "value": "asdfafg@sdf.com"
+                },
+                {
+                  "in": "header",
+                  "name": "client",
+                  "description": "client i.e SYE-vyxMzKpqsCJ2a3l2OA",
+                  "required": true,
+                  "type": "string",
+                  "value": "SYE-vyxMzKpqsCJ2a3l2OA"
+                },
+                {
+                  "in": "header",
+                  "name": "access_token",
+                  "description": "access_token i.e fGq7nRaAiPuA_faLC6pW_g",
+                  "required": true,
+                  "type": "string",
+                  "value": "fGq7nRaAiPuA_faLC6pW_g"
+                }
+              ],
+              "responses": {
+                "200": {
+                  "description": "success.",
+                  "content": {
+                    "application/json": {
+                      "examples": {
+                        "success": true,
+                        "data": true,
+                        "errors": {},
+                        "message": "Employee id is already taken"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "/shifts/active/{shiftId}": {
+            "get": {
+              "description": "Shift Activate deactivate",
+              "operationId": "activeshift",
+              "consumes": ["application/json"],
+              "produces": ["application/json"],
+              "parameters": [
+                {
+                  "in": "header",
+                  "name": "uid",
+                  "description": "uid i.e asdfafg@sdf.com",
+                  "required": true,
+                  "type": "string",
+                  "value": "asdfafg@sdf.com"
+                },
+                {
+                  "in": "header",
+                  "name": "client",
+                  "description": "client i.e SYE-vyxMzKpqsCJ2a3l2OA",
+                  "required": true,
+                  "type": "string",
+                  "value": "SYE-vyxMzKpqsCJ2a3l2OA"
+                },
+                {
+                  "in": "header",
+                  "name": "access_token",
+                  "description": "access_token i.e fGq7nRaAiPuA_faLC6pW_g",
+                  "required": true,
+                  "type": "string",
+                  "value": "fGq7nRaAiPuA_faLC6pW_g"
+                },
+                {
+                  "name": "shiftId",
+                  "in": "path",
+                  "description": "shiftId",
+                  "required": true,
+                  "type": "integer",
+                  "value": "619"
+                }
+              ],
+              "responses": {
+                "200": {
+                  "description": "success.",
+                  "content": {
+                    "application/json": {
+                      "examples": {
+                        "success": true,
+                        "data": {},
+                        "errors": {},
+                        "message": "Shift successfully De-activated"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

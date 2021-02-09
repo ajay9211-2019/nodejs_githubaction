@@ -1,0 +1,14 @@
+version: '3'
+services:
+    api_ms:
+        env_file:
+            - ./.env
+        build:
+            context: "./api_ms"
+            dockerfile: "Dockerfile"
+        ports:
+            - '80:4002'
+        restart: on-failure
+
+    
+            
